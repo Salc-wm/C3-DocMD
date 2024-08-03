@@ -25,7 +25,7 @@ Let’s go over some of the useful ones;
 
 For now we can ignore all of these and jump into `src/main.c3`
 
-# You first Hello World
+# Your first Hello World
 Let’s start with a simple “Hello World” program.
 The simplest Hello World you can write in C3 looks like this:
 ```rust
