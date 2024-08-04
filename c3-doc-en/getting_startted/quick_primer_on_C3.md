@@ -345,38 +345,38 @@ Use `nextcase` to fallthrough to the next statement, but empty case statements h
 // C
 switch (a)
 {
-  case 1:
-  case 2:
-    doOne();
-    break;
-  case 3:
-    i = 0;
-  case 4:
-    doFour();
-    break;
-  case 5:
-    doFive();
-  default:
-    return false;
+    case 1:
+    case 2:
+        doOne();
+        break;
+    case 3:
+        i = 0;
+    case 4:
+        doFour();
+        break;
+    case 5:
+        doFive();
+    default:
+        return false;
 }
 ```
 ```rust
 // C3
 switch (a)
 {
-  case 1:
-  case 2:
-    doOne();
-  case 3:
-    i = 0;
-    nextcase;
-  case 4:
-    doFour();
-  case 5:
-    doFive();
-    nextcase;
-  default:
-    return false;
+    case 1:
+    case 2:
+        doOne();
+    case 3:
+        i = 0;
+        nextcase;
+    case 4:
+        doFour();
+    case 5:
+        doFive();
+        nextcase;
+    default:
+        return false;
 }
 ```
 
@@ -385,33 +385,33 @@ Note that we can jump to an arbitrary case using __C3__:
 // C
 switch (a)
 {
-  case 1:
-    doOne();
-    goto LABEL3;
-  case 2:
-    doTwo();
-    break;
-  case 3:
-LABEL3:
-    doThree();
-  default:
-    return false;
+    case 1:
+        doOne();
+        goto LABEL3;
+    case 2:
+        doTwo();
+        break;
+    case 3:
+        LABEL3:
+        doThree();
+    default:
+        return false;
 }
 ```
 ```rust
 // C3
 switch (a)
 {
-  case 1:
-    doOne();
-    nextcase 3;
-  case 2:
-    doTwo();
-  case 3:
-    doThree();
-    nextcase;
-  default:
-    return false;
+    case 1:
+        doOne();
+        nextcase 3;
+    case 2:
+        doTwo();
+    case 3:
+        doThree();
+        nextcase;
+    default:
+        return false;
 }
 ```
 
