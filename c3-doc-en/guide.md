@@ -6,7 +6,7 @@ But before that we need to install C3C, the compiler for C3.
 
 ## Creating a new project
 The `c3c init` comamnd will create a new directory containing your project structure.
-```bash
+```bas
 $ c3c init <project-name>
 ```
 
@@ -25,7 +25,7 @@ Let’s go over some of the useful ones;
 
 For now we can ignore all of these and jump into `src/main.c3`
 
-# Your first Hello World
+# You first Hello World
 Let’s start with a simple “Hello World” program.
 The simplest Hello World you can write in C3 looks like this:
 ```rust
@@ -169,13 +169,13 @@ bool f = false;
 ## Character literals
 A character literal is a value enclosed in '``'. Its value is intepreted as being its ASCII value for a single character.
 
-It is also possible to use 2, 4 or 8 character wide character literals. Such are interpreted as ushort, `uint` and `ulong` respectively and are laid out in memory from left to right. This means that the actual value depends on the [endianess](https://en.wikipedia.org/wiki/Endianness) of the target.
+It is also possible to use 2, 4 or 8 character wide character literals. Such are interpreted as ushort, `uint` and `ulong` respectively and are laid out in memory from left to right. This means that the actual value depends on the endianess of the target.
 
   - 2 character literals, e.g. 'C3', would convert to an ushort.
   - 4 character literals, e.g. 'TEST', converts to an uint.
   - 8 character literals, e.g. 'FOOBAR11' converts to an ulong.
 
-The 4 character literals correspond to the layout of [FourCC](https://en.wikipedia.org/wiki/FourCC) codes. It will also correctly arrange unicode characters in memory. E.g. `Char32 smiley = '\u1F603'`
+The 4 character literals correspond to the layout of FourCC codes. It will also correctly arrange unicode characters in memory. E.g. `Char32 smiley = '\u1F603'`
 
 ## Floating point types
 As is common, C3 has two floating point types: `float` and `double`. float is the 32 bit floating point type and `double` is 64 bits.
@@ -201,7 +201,7 @@ For initialization it’s sometimes convenient to use the wildcard `Type[*]` dec
 int[3] abc = { 1, 2, 3 }; // Explicit int[3]
 int[*] bcd = { 1, 2, 3 }; // Implicit int[3]
 ```
-Read more about initializing arrays in the [chapter on arrays](https://c3-lang.org/references/docs/arrays/).
+Read more about initializing arrays in the chapter on arrays.
 
 ## Slices
 Slices have the format `Type[]`. Unlike the array, a slice does not hold the values themselves but instead presents a view of some underlying array or vector.
@@ -245,7 +245,7 @@ char* bar = "\"Say `hello`\"";
 String literals are special in that they can convert to several different types: `String`, `char` and `ichar` arrays and slices and finally `ichar*` and `char*`.
 
 ## Base64 and hex data literals
-Base64 literals are strings prefixed with `b64` to containing [Base64 encoded](https://en.wikipedia.org/wiki/Base64) data, which is converted into a char array at compile time:
+Base64 literals are strings prefixed with `b64` to containing Base64 encoded data, which is converted into a char array at compile time:
 ```c
 // The array below contains the characters "Hello World!"
 char[*] hello_world_base64 = b64"SGVsbG8gV29ybGQh";
@@ -311,7 +311,7 @@ fn void main()
 }
 ```
 
-We can apply the [standard printf formatting rules](https://en.cppreference.com/w/c/io/fprintf), but unlike in C/C++ there is no need to indicate the type when using `%d` - it will print unsigned and signed up to `int128`, in fact there is no support for `%u`, `%lld` etc in `io::printf`. Furthermore, `%s` works not just on strings but on any type:
+We can apply the standard printf formatting rules, but unlike in C/C++ there is no need to indicate the type when using `%d` - it will print unsigned and signed up to `int128`, in fact there is no support for `%u`, `%lld` etc in `io::printf`. Furthermore, `%s` works not just on strings but on any type:
 ```rust
 import std::io;
 
