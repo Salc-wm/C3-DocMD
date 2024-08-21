@@ -10,7 +10,7 @@ A new project is provided with a barebone structure in `project.json`:
   "authors": [
     "John Doe <john.doe@example.com>"
   ],
-  "langrev": "1",
+  " ": "1",
   "warnings": [ "no-unused" ],
   // sources compiled
   "sources": [ "./**" ],
